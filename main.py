@@ -38,10 +38,10 @@ def calculate_users_sessions():
 
                 # Update set the new older and news date on the period
                 new_end_time = session_answered_time
-                new_end_ts = answered_ts
+                new_end_ts = session_answered_ts
                 if session_answered_ts < answered_ts:
                     new_end_time = activitie["answered_at"]
-                    new_end_ts = session_answered_ts
+                    new_end_ts = answered_ts
 
                 new_start_time = session_answered_time
                 new_start_ts = session_first_seen_ts
