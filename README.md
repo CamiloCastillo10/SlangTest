@@ -1,0 +1,2 @@
+# Slang test
+Time complexity: since this algorithm iterates over the all the activities list, the average complexity of this action is N. Nevertheless, this algorithm also search if the activity was perform inside an existing session, which is complete in log(N) (By the binary search). In conclusion, the current complexity of this algorithm is NLog(N).
