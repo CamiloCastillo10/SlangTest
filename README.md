@@ -1,2 +1,4 @@
 # Slang test
 Time complexity: since this algorithm iterates over the all the activities list, the average complexity of this action is N. Nevertheless, this algorithm also search if the activity was perform inside an existing session, which is complete in log(N) (By the binary search). In conclusion, the current complexity of this algorithm is NLog(N).
+
+Possible enhancements: There is an edge case in which at the end of the algorithm, two separate sessions have a difference of time of less to 5 minutes. This happens because at some point the algorithm takes the activities as two different sessions, and then other activities are added to those sessions, making the difference between both sessions shorter. In order to solve this issue, it is necessary to add a final step that merges those sessions with a difference of time of no more than 5 min.
