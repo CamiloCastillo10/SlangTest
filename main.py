@@ -44,7 +44,7 @@ def calculate_users_sessions():
                     new_end_ts = session_answered_ts
 
                 new_start_time = session_answered_time
-                new_start_ts = answered_ts
+                new_start_ts = session_first_seen_ts
                 if session_first_seen_ts > first_seen_ts:
                     new_start_time = activitie["first_seen_at"]
                     new_start_ts = first_seen_ts
@@ -53,7 +53,7 @@ def calculate_users_sessions():
                 selected_session = user_sessions[activitie["user_id"]][position[1]]
                 selected_session["ended_at"] = new_end_time
                 selected_session["started_at"] = new_start_time
-                selected_session["duration"] = new_start_time
+                selected_session["duration"] = new_end_ts - new_start_ts
                 selected_session["activity_ids"].append(activitie["id"]),
                 users_timeline[activitie["user_id"]] = [(new_end_ts, new_start_ts)]
             else:
